@@ -2,15 +2,15 @@ import { restaurantsConstants } from "../_constants";
 
 export function restaurants(state = {}, action) {
   switch (action.type) {
-    case restaurantsConstants.GETALL_REQUEST:
+    case restaurantsConstants.GET_REQUEST:
       return {
         loading: true,
       };
-    case restaurantsConstants.GETALL_SUCCESS:
+    case restaurantsConstants.GET_SUCCESS:
       return {
         items: action.restaurants,
       };
-    case restaurantsConstants.GETALL_FAILURE:
+    case restaurantsConstants.GET_FAILURE:
       return {
         error: action.error,
       };

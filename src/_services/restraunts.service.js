@@ -2,10 +2,10 @@ import config from "config";
 import { authHeader } from "../_helpers";
 
 export const restaurantsService = {
-  getAll,
+  get,
 };
 
-function getAll() {
+function get() {
   const requestOptions = {
     method: "GET",
     headers: authHeader(),
