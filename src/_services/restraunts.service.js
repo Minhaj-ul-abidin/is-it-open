@@ -8,7 +8,6 @@ export const restaurantsService = {
 function get() {
   const requestOptions = {
     method: "GET",
-    headers: authHeader(),
   };
 
   return fetch(`${config.apiUrl}/restaurant/v1/`, requestOptions).then(

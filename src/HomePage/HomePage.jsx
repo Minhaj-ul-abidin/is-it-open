@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { restaurantsActions } from "../_actions";
-import { RestaurantList } from "../_components";
+import { Restaurants } from "../RestaurantList";
 
 function HomePage() {
   const restaurants = useSelector((state) => state.restaurants);
@@ -15,15 +15,20 @@ function HomePage() {
     dispatch(restaurantsActions.get());
   }, []);
 
+  const addHandler = (restaurantId) => {
+    
+    console.log("Add Handler CLicked On Restraunt: " + restaurantId);
+  };
+
   return (
     <div className="col-lg-8 offset-lg-2">
-      <h1>Hi {user.name}!</h1>
+      <h1>Hi {user ? user.name : "Guest"}!</h1>
       <p>
-        <Link to="/login">Logout</Link>
+        <Link to="/login"> {user ? "logout" : "login"}</Link>
       </p>
       <br />
       <h3> List of Restaurants </h3>
-      <RestaurantList restaurants={restaurants} />
+      <Restaurants restaurants={restaurants} addHandler={addHandler}  />
     </div>
   );
 }
