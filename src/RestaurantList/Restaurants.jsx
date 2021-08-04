@@ -1,5 +1,6 @@
 import React from "react";
-function RestaurantList({ restaurants }) {
+import { RestaurantList } from "./RestaurantList";
+function Restaurants({ restaurants, addHandler }) {
   return (
     <div>
       {restaurants.loading && <em>Loading restaurants...</em>}
@@ -7,14 +8,13 @@ function RestaurantList({ restaurants }) {
         <span className="text-danger">ERROR: {restaurants.error}</span>
       )}
       {restaurants.items && (
-        <ul>
-          {restaurants.items.map((restaurant, index) => (
-            <li key={restaurant._id}>{index + ". " + restaurant.name}</li>
-          ))}
-        </ul>
+        <RestaurantList
+          restaurants={restaurants.items}
+          addHandler={addHandler}
+        />
       )}
     </div>
   );
 }
 
-export { RestaurantList };
+export { Restaurants };

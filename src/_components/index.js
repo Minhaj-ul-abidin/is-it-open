@@ -1,2 +1,1 @@
-export * from './PrivateRoute';
-export * from "./RestaurantList";
+export * from "./PrivateRoute";

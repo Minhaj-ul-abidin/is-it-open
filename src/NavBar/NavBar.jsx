@@ -1,0 +1,32 @@
+import React from "react";
+import { Link } from "react-router-dom";
+const NavBar = () => {
+  return (
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-Brand" to="/Home">
+        IS IT OPEN
+      </Link>
+      <div>
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/Home">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/Login">
+              Login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/Register">
+              Register
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export { NavBar };
