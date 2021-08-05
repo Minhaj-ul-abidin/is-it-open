@@ -11,8 +11,8 @@ function get() {
   return (dispatch) => {
     dispatch(request());
 
-    restaurantsService.get().then(
-      (restaurants) => dispatch(success(restaurants.data)),
+    collectionService.get().then(
+      (collections) => dispatch(success(collections.data)),
       (error) => dispatch(failure(error.toString()))
     );
   };
@@ -20,8 +20,8 @@ function get() {
   function request() {
     return { type: collectionConstants.GET_REQUEST };
   }
-  function success(restaurants) {
-    return { type: collectionConstants.GET_SUCCESS, restaurants };
+  function success(collections) {
+    return { type: collectionConstants.GET_SUCCESS, collections };
   }
   function failure(error) {
     return { type: collectionConstants.GET_FAILURE, error };
