@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { restaurantsActions } from "../_actions";
-import { Restaurants } from "../RestaurantList";
+import { Restaurants } from "../Restaurants";
 
 function HomePage() {
   const restaurants = useSelector((state) => state.restaurants);
@@ -23,12 +23,8 @@ function HomePage() {
   return (
     <div className="col-lg-8 offset-lg-2">
       <h1>Hi {user ? user.name : "Guest"}!</h1>
-      <p>
-        <Link to="/login"> {user ? "logout" : "login"}</Link>
-      </p>
-      <br />
       <h3> List of Restaurants </h3>
-      <Restaurants restaurants={restaurants} addHandler={addHandler}  />
+      <Restaurants restaurants={restaurants} addHandler={addHandler} />
     </div>
   );
 }
