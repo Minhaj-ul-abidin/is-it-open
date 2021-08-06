@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { restaurantsActions } from "../_actions";
-import { Restaurants } from "../Restaurants";
+import { Restaurants } from "../_components";
 
 function HomePage() {
   const restaurants = useSelector((state) => state.restaurants);

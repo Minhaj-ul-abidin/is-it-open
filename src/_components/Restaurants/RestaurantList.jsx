@@ -6,14 +6,8 @@ const RestaurantList = ({ restaurants, addHandler }) => {
       {restaurants.map((restaurant, index) => (
         <li key={restaurant._id}>
           {index + ". " + restaurant.name}
-          {restaurant.addingToCollection ? (
-            <em> - Deleting...</em>
-          ) : restaurant.addingToCollectionError ? (
-            <span className="text-danger">
-              {" "}
-              - ERROR: {restaurant.deleteError}
-            </span>
-          ) : (
+          <p>{restaurant.raw_timings}</p>
+          {addHandler && (
             <span>
               {" "}
               -{" "}

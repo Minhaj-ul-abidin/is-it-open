@@ -6,7 +6,7 @@ const NavBar = () => {
   const user = useSelector((state) => state.authentication.user);
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-Brand" to="/Home">
         IS IT OPEN
       </Link>
@@ -18,15 +18,22 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/collections">
+              Collections
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/Login">
               {user ? "Logout" : "Login"}
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/Register">
-              Register
-            </Link>
-          </li>
+          {!user && (
+            <li className="nav-item">
+              <Link className="nav-link" to="/Register">
+                Register
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
