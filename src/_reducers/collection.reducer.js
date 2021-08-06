@@ -14,6 +14,17 @@ export function collections(state = {}, action) {
       return {
         error: action.error,
       };
+    case collectionConstants.CREATE_REQUEST:
+      return { ...state, creating: true };
+    case collectionConstants.CREATE_SUCCESS:
+      return {
+        items: [action.collection, ...state.items],
+      };
+    case collectionConstants.CREATE_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+      };
 
     default:
       return state;

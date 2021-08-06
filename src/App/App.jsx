@@ -30,6 +30,9 @@ function App() {
             <Router history={history}>
               <NavBar />
               <br />
+              {alert.message && (
+                <div className={`alert ${alert.type}`}>{alert.message}</div>
+              )}
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route path="/login" component={LoginPage} />
@@ -38,9 +41,6 @@ function App() {
                 <Redirect from="*" to="/" />
               </Switch>
             </Router>
-            {alert.message && (
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
-            )}
           </div>
         </div>
       </div>
